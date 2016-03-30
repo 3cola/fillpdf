@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					{{> addPost}}
-					{{> favoritesSidebar}}
+					<!-- {{> favoritesSidebar}} -->
 				</div>
 				<div class="col-md-9">
 					{{> posts}}
@@ -48,10 +48,11 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						{{title}}
-						<span class="pull-right">
-							<i class="fa fa-thumbs-up"></i> {{#with favoritesByDoc _id}}{{count}}{{/with}}
+						<!-- <span class="pull-right">
+							<i class="fa fa-thumbs-up"></i>
+							{{#with favoritesByDoc _id}}{{count}}{{/with}}
 							<i class="fa fa-comments"></i> {{commentCount _id}}
-						</span>
+						</span> -->
 					</h3>
 				</div>
 				<div class="panel-body">
@@ -61,9 +62,9 @@
 						{{/with}}
 					</p>
 					<div class="media">
-						<a class="pull-left" href="#">
+						<!-- <a class="pull-left" href="#">
 							{{> avatar userId=owner shape="circle"}}
-						</a>
+						</a> -->
 						<div class="media-body">
 							<p>{{content}}</p>
 							{{#if $eq owner User._id}}
@@ -71,7 +72,7 @@
 								{{#afModal title="Update post" omitFields="createdAt,updatedAt,owner" class="text-primary" collection="Posts" operation="update" doc=_id}}
 									<i class="fa fa-pencil" buttonContent="Edit post"></i> {{_ "edit_post"}}
 								{{/afModal}}
-								{{#afModal title="Delete post" class="text-danger" collection="Posts" operation="remove" doc=_id}}
+								{{#afModal title="Delete post" class="text-danger" collection="Posts" operation="remove" doc=_id onSuccess="removeAttachment(_id, picture)"}}
 									<i class="fa fa-times" buttonContent="Edit post"></i> {{_ "delete"}}
 								{{/afModal}}
 							</small>
@@ -79,16 +80,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="panel-footer">
+				<!-- <div class="panel-footer">
 					{{> favoriteButton _id=_id}}
 					{{> commentFormToggle }}
 					{{> comments}}
-				</div>
+				</div> -->
 		</div>
 	</div>
 </template>
 
-<template name="favoritesSidebar">
+<!-- <template name="favoritesSidebar">
 	<div class="template-favorites-sidebar">
 		{{#if myFavorites.count}}
 		<div class="panel panel-default">
@@ -107,4 +108,4 @@
 		</div>
 		{{/if}}
 	</div>
-</template>
+</template> -->

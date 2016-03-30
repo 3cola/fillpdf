@@ -1,9 +1,17 @@
-ProfilePictures.allow
+# ProfilePictures.allow
+# 	insert: (userId, doc) ->
+# 		true
+# 	update: (userId, doc, fieldNames, modifier) ->
+# 		true
+# 	download: (userId)->
+# 		true
+
+Pdfs.allow
 	insert: (userId, doc) ->
 		true
-	update: (userId, doc, fieldNames, modifier) ->
+	update: (userId, doc, fields, modifier) ->
 		true
-	download: (userId)->
+	remove: (userId, doc) ->
 		true
 
 Posts.allow

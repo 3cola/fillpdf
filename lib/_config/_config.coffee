@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'My App'
+	name: 'Fill PDF App'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->
@@ -21,7 +21,7 @@
 
 	# Username - if true, users are forced to set a username
 	username: false
-	
+
 	# Localisation
 	defaultLanguage: 'en'
 	dateFormat: 'D/M/YYYY'
@@ -31,27 +31,27 @@
 	termsUrl: 'http://meteorfactory.io'
 
 	# For email footers
-	legal:
-		address: 'Jessnerstrasse 18, 12047 Berlin'
-		name: 'Meteor Factory'
-		url: 'http://benjaminpeterjones.com'
-
-	about: 'http://meteorfactory.io'
-	blog: 'http://learn.meteorfactory.io'
-
-	socialMedia:
-		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
-			icon: 'facebook'
-		twitter:
-			url: 'http://twitter.com/BenPeterJones'
-			icon: 'twitter'
-		github:
-			url: 'http://github.com/yogiben'
-			icon: 'github'
-		info:
-			url: 'http://meteorfactory.io'
-			icon: 'link'
+	# legal:
+	# 	address: 'Jessnerstrasse 18, 12047 Berlin'
+	# 	name: 'Meteor Factory'
+	# 	url: 'http://benjaminpeterjones.com'
+	#
+	# about: 'http://meteorfactory.io'
+	# blog: 'http://learn.meteorfactory.io'
+	#
+	# socialMedia:
+	# 	facebook:
+	# 		url: 'http://facebook.com/benjaminpeterjones'
+	# 		icon: 'facebook'
+	# 	twitter:
+	# 		url: 'http://twitter.com/BenPeterJones'
+	# 		icon: 'twitter'
+	# 	github:
+	# 		url: 'http://github.com/yogiben'
+	# 		icon: 'github'
+	# 	info:
+	# 		url: 'http://meteorfactory.io'
+	# 		icon: 'link'
 
 	#Routes
 	homeRoute: '/'

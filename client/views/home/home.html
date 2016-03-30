@@ -11,9 +11,9 @@
                         <li>
                             <a href="{{pathFor 'atSignIn'}}" class="link">{{_ "login2"}}</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="{{pathFor 'atSignUp'}}" class="link btn btn-hollow">{{_ "signup"}}</a>
-                        </li>
+                        </li> -->
                         {{/if}}
                     </ul>
                 </div>
@@ -30,7 +30,7 @@
                         {{#if User}}
                         <a href="{{pathFor 'dashboard'}}" class="btn btn-success"><i class="fa fa-dashboard"></i> {{_ "dashboard"}}</a>
                         {{else}}
-                        <a class="btn btn-hollow" href="{{pathFor 'atSignUp'}}">{{_ "getstarted"}}</a>
+                        <a class="btn btn-hollow" href="{{pathFor 'atSignIn'}}">{{_ "getstarted"}}</a>
                         {{/if}}
                     </div>
                 </div>
@@ -70,7 +70,7 @@
             </div>
         </div>
     </section>
-    <section id="ipad" class="colored text-center">
+    <!-- <section id="ipad" class="colored text-center">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -104,5 +104,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </template>

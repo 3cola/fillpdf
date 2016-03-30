@@ -1,22 +1,22 @@
 {
 
 	/*Config*/
-	"configName": "My App",
-	"configTitle": "Make Meteor Apps. Fast.",
-	"configSubtitle": "Create beautiful and functioning Meteor apps really quick",
-	
+	"configName": "Fill PDF App",
+	"configTitle": "Fill PDF Files forms made easy.",
+	"configSubtitle": "",
+
 	/*Home*/
-	"getstarted": "Get Started",
+	"getstarted": "Go to Login",
 	"dashboard": "Go to dashboard",
 	"learn": "Learn more",
 	"intro": "Make Meteor Apps. Fast.",
 	"how": "How It Works",
 	"step_1": "Step 1",
-	"step_1_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"step_1_text": "Select the set of PDF Files for which you want to fill in the forms.",
 	"step_2": "Step 2",
-	"step_2_text": "Oratio me istius philosophi non offendit; Qua tu etiam inprudens utebare non numquam.",
+	"step_2_text": "Fill the form fields of this app.",
 	"step_3": "Step 3",
-	"step_3_text": "Et ille ridens: Video, inquit, quid agas; Duo Reges: constructio interrete.",
+	"step_3_text": "Generate a ZIP file of all the seleced PDF files, with their form fields already pre-filled by the app.",
 	"section_ipad_header": "A revolutionary product",
 	"section_ipad_text": "Do really cool stuff really quickly",
 	"section_ipad_btn": "Made by MeteorFactory",
@@ -70,7 +70,7 @@
 	"profilePicture": "Profile Picture"
 
 
-	
+
 
 
 }

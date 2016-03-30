@@ -8,7 +8,7 @@ Router.map ->
     waitOn: ->
       [
         subs.subscribe 'posts'
-        subs.subscribe 'comments'
+        # subs.subscribe 'comments'
         subs.subscribe 'attachments'
       ]
     data: ->

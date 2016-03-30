@@ -1,14 +1,14 @@
 Schemas.UserProfile = new SimpleSchema(
 
-  picture:
-    type: String
-    optional:true
-    label: 'Profile picture'
-    autoform:
-      afFieldInput:
-        type: 'fileUpload'
-        collection: 'ProfilePictures'
-
+  # picture:
+  #   type: String
+  #   optional:true
+  #   label: 'Profile picture'
+  #   autoform:
+  #     afFieldInput:
+  #       type: 'fileUpload'
+  #       collection: 'ProfilePictures'
+  #
   firstName:
     type: String
     optional: true
@@ -17,30 +17,30 @@ Schemas.UserProfile = new SimpleSchema(
     type: String
     optional: true
 
-  birthday:
-    type: Date
-    optional: true
-
-  bio:
-    type: String
-    optional: true
-    autoform:
-      rows: 4
-
-  location:
-    type: String
-    optional: true
-    autoform:
-      type: 'map'
-      geolocation: true
-      searchBox: true
-      autolocate: true
-
-  country:
-    type: String
-    label: 'Nationality'
-    allowedValues: Utils.countryList
-    optional: true
+  # birthday:
+  #   type: Date
+  #   optional: true
+  #
+  # bio:
+  #   type: String
+  #   optional: true
+  #   autoform:
+  #     rows: 4
+  #
+  # location:
+  #   type: String
+  #   optional: true
+  #   autoform:
+  #     type: 'map'
+  #     geolocation: true
+  #     searchBox: true
+  #     autolocate: true
+  #
+  # country:
+  #   type: String
+  #   label: 'Nationality'
+  #   allowedValues: Utils.countryList
+  #   optional: true
 )
 
 Schemas.User = new SimpleSchema(

@@ -1,2 +1,2 @@
-Tracker.autorun ->
-  subs.subscribe 'myFavorites'
+# Tracker.autorun ->
+#   subs.subscribe 'myFavorites'

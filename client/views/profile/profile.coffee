@@ -13,8 +13,8 @@ AutoForm.hooks
 
 # Autoupdate form
 # Autoform's autosave="true" wasn't working
-Template.profile.events
-	'change form#updatePicture input': (e,t) ->
-		Meteor.setTimeout ->
-			$('form#updatePicture').submit()
-		, 10
+# Template.profile.events
+# 	'change form#updatePicture input': (e,t) ->
+# 		Meteor.setTimeout ->
+# 			$('form#updatePicture').submit()
+# 		, 10
