@@ -1,14 +1,14 @@
 @AdminConfig =
 	name: Config.name
 	collections:
-		Posts:
-			color: 'red'
-			icon: 'pencil'
-			extraFields: ['owner']
-			tableColumns: [
-				{ label: 'Title', name: 'title' }
-				{ label: 'User', name: 'author()', template: 'adminUserCell' }
-			]
+		# Posts:
+		# 	color: 'red'
+		# 	icon: 'pencil'
+		# 	extraFields: ['owner']
+		# 	tableColumns: [
+		# 		{ label: 'Title', name: 'title' }
+		# 		{ label: 'User', name: 'author()', template: 'adminUserCell' }
+		# 	]
 		Pdfs:
 			color: 'red'
 			icon: 'pencil'
@@ -16,6 +16,20 @@
 			tableColumns: [
 				{label: 'Name', name: 'name'}
 				{label: 'File', name: 'file'}
+				{label: 'User', name: 'author()', template: 'adminUserCell'}
+			]
+			children: [
+				{
+					find: () ->
+						FormFields.find()
+				}
+			]
+		FormFields:
+			color: 'green'
+			icon: 'pencil'
+			extraFields: ['owner']
+			tableColumns: [
+				{label: 'Name', name: 'name'}
 				{label: 'User', name: 'author()', template: 'adminUserCell'}
 			]
 		# Comments:

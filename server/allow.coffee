@@ -1,34 +1,26 @@
-# ProfilePictures.allow
-# 	insert: (userId, doc) ->
-# 		true
-# 	update: (userId, doc, fieldNames, modifier) ->
-# 		true
-# 	download: (userId)->
-# 		true
+FormFields.allow
+	insert: (userId, doc) ->
+		Roles.userIsInRole( userId, 'admin')
+	update: (userId, doc, fields, modifier) ->
+		Roles.userIsInRole( userId, 'admin')
+	remove: (userId, doc) ->
+		Roles.userIsInRole( userId, 'admin')
 
 Pdfs.allow
 	insert: (userId, doc) ->
-		true
+		Roles.userIsInRole( userId, 'admin')
 	update: (userId, doc, fields, modifier) ->
-		true
+		Roles.userIsInRole( userId, 'admin')
 	remove: (userId, doc) ->
-		true
-
-Posts.allow
-	insert: (userId, doc) ->
-		userId == doc.owner
-	update: (userId, doc, fields, modifier) ->
-		userId == doc.owner
-	remove: (userId, doc) ->
-		userId == doc.owner
+		Roles.userIsInRole( userId, 'admin')
 
 Attachments.allow
 	insert: (userId, doc) ->
-		true
+		Roles.userIsInRole( userId, 'admin')
 	update: (userId, doc, fieldNames, modifier) ->
-		true
+		Roles.userIsInRole( userId, 'admin')
 	download: (userId)->
-		true
+		Roles.userIsInRole( userId, 'admin')
 
 Meteor.users.allow
 	update: (userId, doc, fieldNames, modifier) ->

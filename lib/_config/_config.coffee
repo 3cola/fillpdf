@@ -3,6 +3,9 @@
 
 @Config =
 
+	# Default Admin setup
+	adminEmail: 'ecolaitis@gmail.com'
+
 	# Basic Details
 	name: 'Fill PDF App'
 	title: ->
@@ -27,8 +30,8 @@
 	dateFormat: 'D/M/YYYY'
 
 	# Meta / Extenrnal content
-	privacyUrl: 'http://meteorfactory.io'
-	termsUrl: 'http://meteorfactory.io'
+	privacyUrl: 'http://myPrivacyURL.com'
+	termsUrl: 'http://myTermsURL.com'
 
 	# For email footers
 	# legal:

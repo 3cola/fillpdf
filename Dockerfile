@@ -3,7 +3,7 @@ COPY . /opt/src
 WORKDIR /opt/src
 RUN meteor build .. --directory --server http://localhost:3000 \
     && cd ../bundle/programs/server \
-    && npm install \
+    && npm install atob fdf \
     && rm -rf /opt/src
 WORKDIR /opt/bundle
 USER nobody

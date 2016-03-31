@@ -7,9 +7,9 @@ Router.map ->
     path: "/dashboard"
     waitOn: ->
       [
-        subs.subscribe 'posts'
-        # subs.subscribe 'comments'
-        subs.subscribe 'attachments'
+        subs.subscribe 'pdfs'
+        subs.subscribe 'formFields'
       ]
     data: ->
-      posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
+      pdfs: Pdfs.find({},{sort: {name: 1}}).fetch()
+      formFields: FormFields.find({},{sort: {name: 1}}).fetch()

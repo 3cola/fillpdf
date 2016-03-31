@@ -30,6 +30,7 @@ cfs:collection@0.5.5
 cfs:collection-filters@0.2.4
 cfs:data-man@0.0.6
 cfs:file@0.1.17
+cfs:filesystem@0.1.2
 cfs:gridfs@0.0.33
 cfs:http-methods@0.0.30
 cfs:http-publish@0.0.13
@@ -116,6 +117,7 @@ npm-bcrypt@0.7.8_2
 npm-mongo@1.4.41
 observe-sequence@1.0.9
 ordered-dict@1.0.5
+pdftk:pdftk@0.7.0
 percolate:momentum@0.7.2
 percolate:momentum-iron-router@0.7.0
 percolate:velocityjs@1.1.0
@@ -148,6 +150,7 @@ timmyg:wow@1.0.1
 tracker@1.0.11
 tsega:skrollr@0.0.2
 twbs:bootstrap@3.3.6
+udondan:jszip@2.4.0_1
 ui@1.0.9
 underscore@1.0.6
 url@1.0.7

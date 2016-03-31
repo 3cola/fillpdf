@@ -61,3 +61,6 @@ check
 standard-minifier-css
 standard-minifier-js
 ramda:ramda
+pdftk:pdftk
+cfs:filesystem
+udondan:jszip

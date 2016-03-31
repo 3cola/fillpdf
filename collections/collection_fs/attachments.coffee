@@ -1,6 +1,6 @@
 @Attachments = new FS.Collection("Attachments",
 	stores: [
-		new FS.Store.GridFS("attachments")
+		new FS.Store.FileSystem("attachments")
 	]
 	filter:
 		allow:

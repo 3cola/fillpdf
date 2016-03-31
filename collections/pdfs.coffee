@@ -5,13 +5,26 @@ Schemas.Field = new SimpleSchema
 		type: String
 		optional: true
 
-	mapped_to:
+	type:
 		type: String
 		optional: true
+
+	mapped_to:
+		type: String
+		regEx: SimpleSchema.RegEx.Id
+		optional: true
+		autoform:
+			options: ->
+				_.map FormFields.find().fetch(), (ff)->
+					label: ff.name
+					value: ff._id
+
 
 Schemas.Pdfs = new SimpleSchema
 	name:
 		type:String
+		index: 1
+		unique: true
 		max: 60
 
 	createdAt:
@@ -45,7 +58,7 @@ Schemas.Pdfs = new SimpleSchema
 				_.map Meteor.users.find().fetch(), (user)->
 					label: user.emails[0].address
 					value: user._id
-
+	
 	fields:
 		type: Array
 		optional: true
@@ -62,3 +75,8 @@ Pdfs.helpers
 			user.profile.firstName + ' ' + user.profile.lastName
 		else
 			user?.emails?[0].address
+
+Pdfs.after.insert (userId, doc) ->
+	Meteor.call "setPdfFields", doc, (error, result) ->
+		if error
+			console.log "error", error
