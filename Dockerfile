@@ -1,6 +1,7 @@
 FROM danieldent/meteor:1.0.3.1
 COPY . /opt/src
 WORKDIR /opt/src
+RUN apt-get update && apt-get install pdftk
 RUN meteor build .. --directory --server http://localhost:3000 \
     && cd ../bundle/programs/server \
     && npm install atob fdf \

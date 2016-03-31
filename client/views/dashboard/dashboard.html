@@ -3,24 +3,29 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
-					<!-- {{> addPost}} -->
 					{{> pdfs}}
-					<!-- {{> favoritesSidebar}} -->
 				</div>
 				<div class="col-md-6">
-					<!-- {{> posts}} -->
 					{{> formFields}}
 				</div>
 				<div class="col-md-3">
-					<a id="generate-zip" href="#" class="btn btn-primary" role="button">Go!</a>
+					{{> generate}}
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
+<template name="generate">
+	<div class="template-generate">
+    <h4 class="icntitle">3. Generate your zip</h4>
+		<a id="generate-zip" href="#" class="btn btn-primary" role="button">Go!</a>
+	</div>
+</template>
+
 <template name="pdfs">
 	<div class="template-pdfs">
+    <h4 class="icntitle">1. Select PDFs</h4>
 		<ul class="list-group">
 		{{#each  pdfs}}
 		{{> pdf}}
@@ -41,6 +46,7 @@
 
 <template name="formFields">
 	<div class="template-formFields">
+    <h4 class="icntitle">2. Fill the form</h4>
 		{{#each formFields}}
 		{{> formField}}
 		{{else}}
