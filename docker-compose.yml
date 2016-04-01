@@ -1,7 +1,7 @@
 # Run with `docker-compose up -d`
 # TODO We should activate MongoDB oplog for better performance.
 fillpdf:
-  image: fillpdf
+  image: papystiopa/fillpdf
   links:
     - fillpdf-db
   environment:
