@@ -41,3 +41,8 @@ FormFields.helpers
 			user.profile.firstName + ' ' + user.profile.lastName
 		else
 			user?.emails?[0].address
+
+# FormFields.after.remove (userId, doc) ->
+# 	Meteor.call "unsetOrphanPdfFields", doc, (error, result) ->
+# 		if error
+# 			console.log "error", error

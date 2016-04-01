@@ -3,3 +3,23 @@
     {{value}}
   </a>
 </template>
+
+<template name="adminPdfFile">
+  {{value}}
+</template>
+
+<template name="adminPdfsNew">
+  <div class="box box-default">
+    <div class="box-body">
+      {{> quickForm id="admin_insert" collection='Pdfs' omitFields='createdAt,updatedAt,fields' buttonContent='Create'}}
+    </div>
+  </div>
+</template>
+
+<template name="adminPdfsEdit">
+  <div class="box box-default">
+    <div class="box-body">
+      {{> quickForm id="admin_update" collection='Pdfs' doc=admin_current_doc omitFields='createdAt,updatedAt,file' buttonContent='Update'}}
+    </div>
+  </div>
+</template>

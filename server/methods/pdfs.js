@@ -1,15 +1,14 @@
 if(Meteor.isServer){
   Meteor.methods({
-    removePdfFields:function(doc){
+    /*unsetOrphanPdfFields:function(doc){
       check(doc, Object)
       if (Roles.userIsInRole( Meteor.userId(), 'admin')) {
-        Pdfs.update({_id: doc._id}, {$unset: {fields: ""}})
       }
-    },
+    },*/
     setPdfFields:function(doc){
       check(doc, Object);
       if (Roles.userIsInRole( Meteor.userId(), 'admin')) {
-	      var pdfs_path = (process.env.NODE_ENV=='production'?'':process.env.PWD+'/.meteor/local')+'/cfs/files/attachments/' 
+	      var pdfs_path = (process.env.NODE_ENV=='production'?'':process.env.PWD+'/.meteor/local')+'/cfs/files/attachments/'
         var sourcePDF = pdfs_path + Attachments.findOne(doc.file).copies.attachments.key
         var formObj = Array()
         var fieldObj = {}

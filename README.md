@@ -1,14 +1,31 @@
 # PDFApp
 A simple application to map and fill PDF Forms in bulk.
 
-# apt-get package used by this project
+## How to run locally for debug
+[meteor link](http://www.meteor.com)
+> `meteor`
+
+## How to build for docker
+[docker link](http://www.docker.com)
+> `docker build -t papystiopa/fillpdf .`
+
+## How to run in docker
+> `docker-compose up -d`
+
+The first user created by default is
+> mc@dm.in
+
+with a default password
+> password
+
+## apt-get package used by this project
 pdftk
 
-# NPM packages used by this project
+## NPM packages used by this project
 atob
 fdf
 
-# Meteor packages used by this project, one per line.
+## Meteor packages used by this project, one per line.
 coffeescript
 less
 accounts-base

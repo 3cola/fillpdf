@@ -3,11 +3,11 @@
 	collections:
 		Pdfs:
 			color: 'red'
-			icon: 'pencil'
-			extraFields: ['owner']
+			icon: 'file-pdf-o'
+			extraFields: ['owner','file']
 			tableColumns: [
 				{label: 'Name', name: 'name'}
-				{label: 'File', name: 'file'}
+				{label: 'File Name', name: 'pdfFileName()', template: 'adminPdfFile'}
 				{label: 'User', name: 'author()', template: 'adminUserCell'}
 			]
 			children: [
@@ -15,10 +15,19 @@
 					find: () ->
 						FormFields.find()
 				}
+				{
+					find: () ->
+						Attachments.find()
+				}
 			]
+			templates:
+				new:
+					name: 'adminPdfsNew'
+				edit:
+					name: 'adminPdfsEdit'
 		FormFields:
 			color: 'green'
-			icon: 'pencil'
+			icon: 'pencil-square-o'
 			extraFields: ['owner']
 			tableColumns: [
 				{label: 'Name', name: 'name'}

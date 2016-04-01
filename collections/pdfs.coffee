@@ -23,8 +23,6 @@ Schemas.Field = new SimpleSchema
 Schemas.Pdfs = new SimpleSchema
 	name:
 		type:String
-		index: 1
-		unique: true
 		max: 60
 
 	createdAt:
@@ -42,6 +40,7 @@ Schemas.Pdfs = new SimpleSchema
 
 	file:
 		type: String
+		optional: true
 		autoform:
 			afFieldInput:
 				type: 'fileUpload'
@@ -75,15 +74,18 @@ Pdfs.helpers
 			user.profile.firstName + ' ' + user.profile.lastName
 		else
 			user?.emails?[0].address
+	pdfFileName: ->
+		fileName = Attachments.findOne({_id: @file}).original.name
+		if (fileName)
+			fileName
+		else
+			''
 
 Pdfs.after.insert (userId, doc) ->
-	Meteor.call "setPdfFields", doc, (error, result) ->
-		if error
-			console.log "error", error
-
-Pdfs.before.update (userId, doc, fieldNames, modifier, options) ->
-	console.log "userId: "+userId
-	console.log "doc: "+JSON.stringify(doc)
-	console.log "fieldNames: "+JSON.stringify(fieldNames)
-	console.log "modifier: "+JSON.stringify(modifier)
-	console.log "options: "+JSON.stringify(options)
+	if (doc.file)
+		Meteor.call "setPdfFields", doc, (error, result) ->
+			if error
+				console.log "error", error
+	else
+		Pdfs.remove(doc._id)
+		console.log "Must have a File."
