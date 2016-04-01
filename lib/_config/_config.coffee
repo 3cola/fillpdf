@@ -2,7 +2,6 @@
 # E.g. The 'name' and 'subtitle' are used in seo.coffee
 
 @Config =
-
 	# Default Admin setup
 	adminEmail: 'mc@dm.in'
 
