@@ -1,12 +1,15 @@
-FROM danieldent/meteor:1.0.3.1
-COPY . /opt/src
-WORKDIR /opt/src
-RUN apt-get update && apt-get install pdftk
-RUN meteor build .. --directory --server http://localhost:3000 \
-    && cd ../bundle/programs/server \
-    && npm install atob fdf \
-    && rm -rf /opt/src
-WORKDIR /opt/bundle
-USER nobody
-ENV PORT 3000
-CMD ["/usr/local/bin/node", "main.js"]
+FROM meteorhacks/meteord:onbuild
+MAINTAINER Etienne Colaitis <ecolaitis@gmail.com>
+
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y \
+  pdftk
+
+RUN npm install \
+  atob \
+  fdf
+
+# Run as you wish!
+# docker run -d --name fillpdf-db mongo
+# docker run -d --link "fillpdf-db:db" -e "MONGO_URL=mongodb://db" \
+#   -e "ROOT_URL=http://example.com" -p 7080:80 fillpdf

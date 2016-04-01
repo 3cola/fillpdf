@@ -16,7 +16,6 @@ aldeed:simple-schema
 fortawesome:fontawesome
 raix:handlebar-helpers
 cfs:standard-packages
-cfs:gridfs
 aldeed:template-extension
 yogiben:helpers
 iron:router
@@ -64,3 +63,4 @@ ramda:ramda
 pdftk:pdftk
 cfs:filesystem
 udondan:jszip
+ecmascript

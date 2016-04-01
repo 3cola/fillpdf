@@ -4,7 +4,7 @@
 @Config =
 
 	# Default Admin setup
-	adminEmail: 'ecolaitis@gmail.com'
+	adminEmail: 'mc@dm.in'
 
 	# Basic Details
 	name: 'Fill PDF App'

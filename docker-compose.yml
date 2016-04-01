@@ -1,0 +1,16 @@
+# Run with `docker-compose up -d`
+# TODO We should activate MongoDB oplog for better performance.
+fillpdf:
+  image: fillpdf
+  links:
+    - fillpdf-db
+  environment:
+    - MONGO_URL=mongodb://fillpdf-db/fillpdf
+    - ROOT_URL=http://localhost:80
+  ports:
+    - 80:80
+
+fillpdf-db:
+   image: mongo
+   ports:
+     - 27017

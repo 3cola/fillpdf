@@ -58,7 +58,7 @@ Schemas.Pdfs = new SimpleSchema
 				_.map Meteor.users.find().fetch(), (user)->
 					label: user.emails[0].address
 					value: user._id
-	
+
 	fields:
 		type: Array
 		optional: true
@@ -80,3 +80,10 @@ Pdfs.after.insert (userId, doc) ->
 	Meteor.call "setPdfFields", doc, (error, result) ->
 		if error
 			console.log "error", error
+
+Pdfs.before.update (userId, doc, fieldNames, modifier, options) ->
+	console.log "userId: "+userId
+	console.log "doc: "+JSON.stringify(doc)
+	console.log "fieldNames: "+JSON.stringify(fieldNames)
+	console.log "modifier: "+JSON.stringify(modifier)
+	console.log "options: "+JSON.stringify(options)

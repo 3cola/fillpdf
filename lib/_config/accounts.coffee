@@ -5,7 +5,7 @@ AccountsTemplates.configure
   # Behaviour
   confirmPassword: true
   enablePasswordChange: true
-  forbidClientAccountCreation: true #false on first startup
+  forbidClientAccountCreation: true
   overrideLoginErrors: true
   sendVerificationEmail: false
   lowercaseUsername: false
@@ -40,5 +40,5 @@ AccountsTemplates.configure
     console.log 'submitting form'
 
 AccountsTemplates.configureRoute 'signIn'
-# AccountsTemplates.configureRoute 'signUp' #uncomment on first startup
+# AccountsTemplates.configureRoute 'signUp' 
 AccountsTemplates.configureRoute 'forgotPwd'
