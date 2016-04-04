@@ -7,7 +7,7 @@ A simple application to map and fill PDF Forms in bulk.
 
 ## How to build for docker
 [docker link](http://www.docker.com)
-> `docker build -t papystiopa/fillpdf .`
+> `docker build -t 3cola/fillpdf .`
 
 ## How to run in docker
 > `docker-compose up -d`
