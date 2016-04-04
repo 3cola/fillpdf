@@ -2,15 +2,26 @@
 A simple application to map and fill PDF Forms in bulk.
 
 ## How to run locally for debug
-[meteor link](http://www.meteor.com)
+[meteor link](https://www.meteor.com)
 > `meteor`
 
 ## How to build for docker
-[docker link](http://www.docker.com)
+[docker link](https://www.docker.com)
+
+[docker hub repository link](https://hub.docker.com/r/3cola/fillpdf/)
+
 > `docker build -t 3cola/fillpdf .`
 
 ## How to run in docker
 > `docker-compose up -d`
+
+or
+
+> `docker run -d --name fillpdf-db mongo`
+
+and
+
+> `docker run -d --name fillpdf-app --link=fillpdf-db:db -e MONGO_URL=mongodb://db -e ROOT_URL=http://localhost -p 80:80 3cola/fillpdf`
 
 The first user created by default is
 > mc@dm.in
