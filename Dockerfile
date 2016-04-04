@@ -16,4 +16,4 @@ RUN npm install \
 #   -e "MONGO_URL=mongodb://db" \
 #   -e "ROOT_URL=http://example.com" \
 #   -e "MAIL_URL=smpt://user:password@smtpsrv:port" \
-#   -p 7080:80 --name fillpdf papystiopa/fillpdf
+#   -p 7080:80 --name fillpdf 3cola/fillpdf
