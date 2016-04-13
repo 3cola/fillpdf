@@ -1,4 +1,4 @@
-# PDFApp
+# FillPDF
 A simple application to map and fill PDF Forms in bulk.
 
 ## How to run locally for debug
@@ -12,7 +12,7 @@ A simple application to map and fill PDF Forms in bulk.
 
 > `docker build -t 3cola/fillpdf .`
 
-## How to run in docker
+## How to run in docker for staging for dev
 > `docker-compose up -d`
 
 or
@@ -22,6 +22,31 @@ or
 and
 
 > `docker run -d --name fillpdf-app --link=fillpdf-db:db -e MONGO_URL=mongodb://db -e ROOT_URL=http://localhost -p 80:80 3cola/fillpdf`
+
+## How to deploy for Production
+
+create the db container with authentication on
+
+> `docker run -d --name fillpdf-db mongo --auth --storageEngine wiredTiger`
+
+add the initial admin user
+
+> `docker exec -it fillpdf-db mongo admin`
+
+> `> db.createUser({ user: "admin", pwd: "myPassw0rd", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] })`
+
+> `docker restart fillpdf-db`
+
+add a dbuser for the app with a its own db
+
+> `docker exec -it fillpdf-db bash`
+
+> `mongo -u "admin" -p "myPassw0rd" --authenticationDatabase "admin" fillpdf`
+> `> db.createUser({ user: "fillpdf", pwd: "123Soleil", roles: [ { role: "dbOwner", db: "fillpdf" } ] })`
+
+and run the app container
+
+> `docker run -d --link "fillpdf-db:db" -e "MONGO_URL=mongodb://fillpdf:123Soleil@db/fillpdf" -e "ROOT_URL=http://example.com" -e "MAIL_URL=smtp://user:password@smtpsrv:port" -p 7080:80 --name fillpdf 3cola/fillpdf`
 
 The first user created by default is
 > mc@dm.in
