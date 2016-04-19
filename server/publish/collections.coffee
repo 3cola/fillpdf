@@ -15,3 +15,6 @@ Meteor.publish 'formFields', ->
 
 Meteor.publish 'pdfs', ->
 	Pdfs.find()
+
+Meteor.publish 'presets', ->
+	Presets.find()

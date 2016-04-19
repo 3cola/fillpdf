@@ -33,6 +33,20 @@
 				{label: 'Name', name: 'name'}
 				{label: 'User', name: 'author()', template: 'adminUserCell'}
 			]
+		Presets:
+			color: 'yellow'
+			icon: 'bars'
+			extraFields: ['owner']
+			tableColumns: [
+				{label: 'Name', name: 'name'}
+				{label: 'User', name: 'author()', template: 'adminUserCell'}
+			]
+			children: [
+				{
+					find: () ->
+						Pdfs.find()
+				}
+			]
 	dashboard:
 		homeUrl: '/dashboard'
 	autoForm:

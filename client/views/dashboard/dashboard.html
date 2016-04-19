@@ -23,9 +23,31 @@
 	</div>
 </template>
 
+<template name="presets">
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Filter with Pre-Selection...
+			<span class="caret"></span>
+		</button>
+		<br/>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+			<li class="default-selection"><a href="#">All</a></li>
+			<li role="separator" class="divider"></li>
+			{{#each presets}}
+			{{> preset}}
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="preset">
+	<li class="preset-selection"><a href="#">{{name}}</a></li>
+</template>
+
 <template name="pdfs">
 	<div class="template-pdfs">
     <h4 class="icntitle">1. Select PDFs</h4>
+		{{> presets}}
 		<ul class="list-group">
 		{{#each  pdfs}}
 		{{> pdf}}
@@ -38,7 +60,7 @@
 
 <template name="pdf">
 	<li class="list-group-item">
-		<input id="{{_id}}" type="checkbox" class="toggle-checked"/>
+		<input id="{{_id}}" type="checkbox" class="toggle-checked" checked="{{checkedByDefault}}"/>
 		&nbsp;
 		{{name}}
 	</li>

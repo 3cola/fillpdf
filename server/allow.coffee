@@ -14,6 +14,14 @@ Pdfs.allow
 	remove: (userId, doc) ->
 		Roles.userIsInRole( userId, 'admin')
 
+Presets.allow
+	insert: (userId, doc) ->
+		Roles.userIsInRole( userId, 'admin')
+	update: (userId, doc, fields, modifier) ->
+		Roles.userIsInRole( userId, 'admin')
+	remove: (userId, doc) ->
+		Roles.userIsInRole( userId, 'admin')
+
 Attachments.allow
 	insert: (userId, doc) ->
 		Roles.userIsInRole( userId, 'admin')
