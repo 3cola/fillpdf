@@ -17,7 +17,7 @@ if(Meteor.isServer){
           var fields = res.toString().split('---').slice(1)
           fields.forEach(function(field){
             fieldObj = {};
-            fieldObj['name'] = field.match(/FieldName:([A-Za-z_\t .]+)/)[1].trim();
+            fieldObj['name'] = field.match(/FieldName:([\u0020-\uFFFF]+)/)[1].trim();
             fieldObj['type'] = field.match(/FieldType:([A-Za-z\t .]+)/)[1].trim();
             fieldObj['mapped_to'] = '';
             formObj.push(fieldObj);
