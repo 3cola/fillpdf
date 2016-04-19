@@ -4,6 +4,8 @@ MAINTAINER Etienne Colaitis <ecolaitis@gmail.com>
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y \
   pdftk
+RUN mkdir -p /cfs
+VOLUME /cfs
 
 # Prepare the db for dev:
 # docker run -d --name fillpdf-db mongo
