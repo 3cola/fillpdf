@@ -1,6 +1,9 @@
 VERSION = 1.0.0
 IMAGE = 3cola/fillpdf
 
+build:
+	meteor build .build/ --directory --server-only --architecture=os.linux.x86_64
+
 all: image publish
 
 latest: image-latest publish-latest
