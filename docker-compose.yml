@@ -8,9 +8,9 @@ fillpdf:
     - MONGO_URL=mongodb://fillpdf-db/fillpdf
     - ROOT_URL=http://localhost:80
   ports:
-    - 80:80
+    - 80:8080
 
 fillpdf-db:
-   image: mongo
+   image: 3cola/alpine-mongo
    ports:
      - 27017

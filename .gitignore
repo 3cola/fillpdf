@@ -1,4 +1,5 @@
 .meteor/local
 .meteor/meteorite
 .meteor/.id
-.build/
+.build/bundle/
+.build/*.tar.gz

@@ -1,0 +1,4 @@
+#!/bin/bash -xe
+
+(cd /data/app/programs/server && npm install --unsafe-perm)
+ node /data/app/main.js
