@@ -1,6 +1,11 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y curl bzip2 build-essential python git pdftk && apt-get clean all && apt-get autoremove -y
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y curl bzip2 build-essential python git pdftk && \
+    apt-get clean all && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN set -ex \
   && for key in \

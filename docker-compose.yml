@@ -11,6 +11,6 @@ fillpdf:
     - 80:8080
 
 fillpdf-db:
-   image: 3cola/alpine-mongo
+   image: 3cola/mongo
    ports:
      - 27017

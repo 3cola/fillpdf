@@ -23,7 +23,7 @@ take a look at the Makefile for more details...
 
 or
 
-> $ `docker run -d --name fillpdf-db 3cola/alpine-mongo`
+> $ `docker run -d --name fillpdf-db 3cola/mongo`
 
 and
 
@@ -33,7 +33,7 @@ and
 
 create the db container with authentication on
 
-> $ `docker run -d --name fillpdf-db 3cola/alpine-mongo --auth --storageEngine wiredTiger`
+> $ `docker run -d --name fillpdf-db 3cola/mongo --auth --storageEngine wiredTiger`
 
 add the initial admin user
 
